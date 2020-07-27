@@ -1,0 +1,7 @@
+<div class="container m-auto my-4">
+  <% unless current_user.lessons.any? %>
+    <%= render "lessons_cta" %>
+  <% else %>
+    <%= render "lessons_landing", lessons: @lessons %>
+  <% end %>
+</div>
