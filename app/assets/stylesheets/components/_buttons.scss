@@ -1,0 +1,39 @@
+.btn {
+    @apply font-semibold text-sm py-2 px-4 rounded cursor-pointer no-underline;
+    transition: 0.3s ease all;
+}
+.btn-default {
+    box-shadow: 0 1px 2px rgba(#444444, .1);
+    @apply bg-white border border-gray-400 text-gray-600;
+    
+    &:hover, &:focus {
+        @apply bg-gray-100 shadow-none;
+    }
+}
+.btn-primary {
+    @apply bg-teal-400 text-teal-100 shadow;
+    
+    &:hover, &:focus {
+        @apply bg-teal-300 text-teal-600;
+    }
+}
+.btn-secondary {
+    @apply bg-gray-700 text-teal-200 shadow;
+    
+    &:hover, &:focus {
+        @apply bg-gray-900 text-gray-400;
+    }
+}
+.btn-destroy {
+    @apply bg-white border border-red text-red;
+    
+    &:hover, &:focus {
+        @apply bg-red text-white;
+    }
+}
+.link {
+    @apply no-underline text-gray-darker;
+    &:hover, &:focus {
+        @apply text-gray-dark;
+    }
+}
