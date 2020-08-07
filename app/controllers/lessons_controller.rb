@@ -6,7 +6,7 @@ class LessonsController < ApplicationController
   # GET /lessons.json
   def index
     
-      @lessons = current_user.lessons.all
+    @lessons = current_user.lessons.all
     
   end
 
@@ -32,7 +32,7 @@ class LessonsController < ApplicationController
 
     respond_to do |format|
       if @lesson.save
-        format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
+        format.html { redirect_to @lesson, notice: 'Lesson scheduled!' }
         format.json { render :show, status: :created, location: @lesson }
       else
         format.html { render :new }

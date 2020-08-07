@@ -4,7 +4,7 @@
   @apply font-normal text-base rounded cursor-pointer border border-transparent appearance-none inline-block select-none leading-normal antialiased align-baseline;
 
   padding: 0.35rem 0.75rem;
-  transition: 0.15s ease;
+  transition: 0.5s ease;
 
   &.btn-sm {
     @apply text-sm py-px px-2;
@@ -33,10 +33,11 @@
 
 .btn-default {
   @apply bg-white border border-gray-400 text-gray-700;
+  box-shadow: 0 1px 2px rgba(#444444, 0.5);
 
   &:hover,
   &:focus {
-    @apply border-gray-700;
+    @apply bg-gray-200 text-indigo-700;
   }
 }
 

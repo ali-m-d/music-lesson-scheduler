@@ -7,7 +7,10 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
   
-  config.hosts << "6d199b1424e34b75afc7e772f48a1b9c.vfs.cloud9.eu-west-2.amazonaws.com"
+  config.hosts << "6d199b1424e34b75afc7e772f48a1b9c.vfs.cloud9.eu-west-2.amazonaws.com" 
+  # In the development environment your application's code is reloaded on
+  
+  config.web_console.whitelisted_ips = '92.13.249.47'
 
   # Do not eager load code on boot.
   config.eager_load = false

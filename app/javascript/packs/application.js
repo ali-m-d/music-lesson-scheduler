@@ -18,3 +18,4 @@ require("trix")
 // const imagePath = (name) => images(name, true)
 import "stylesheets/application"
 import "../css/application.css"
+import "./lessons.js"

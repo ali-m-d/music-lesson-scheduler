@@ -1,0 +1,45 @@
+<nav class="bg-white mb-4 shadow rounded">
+    <ul id="nav-tab" class="tabs list-reset flex">
+        <li class="active" data-tab="calendar">
+            <%= link_to "#calendar", class: "tab flex items-center" do %>
+                <%= render inline: Rails.root.join('app/assets/images/calendar.svg').read %>
+                Calendar
+            <% end %>
+        </li>
+        <li data-tab="all-lessons">
+            <%= link_to "#all-lessons", class: "tab flex items-center" do %>
+                <%= render inline: Rails.root.join('app/assets/images/diary.svg').read %>
+                Scheduled Lessons
+            <% end %>
+        </li>
+    </ul>
+</nav>
+
+<div class="bg-white p-10 border rounded">
+    <div id="all-lessons" class="tab-panel">
+
+    <h1>Lessons</h1>
+
+    <% lessons.each do |lesson| %>
+        <div class="flex flex-wrap items-center justify-start p-4 border-b border-gray-300 mb-6">
+            <div class="flex-1 flex justify-between">
+                <div>
+                    <%= link_to lesson.name, lesson, class: "link mr-4" %>
+                </div>
+            <div>
+              <%= readable_time(lesson.start_time) %> &ndash;
+              <%= readable_time(lesson.end_time) %>
+            </div>
+          </div>
+        </div>
+
+        <%= link_to "Cancel Lesson", lesson, method: :delete, data: { confirm: "Are you sure? There are no refunds." }, class: "btn btn-destroy ml-4" %>
+    <% end %>
+</div>
+
+<div id="calendar" class="tab-panel active">
+    <h2>Lessons Calendar</h2>
+    <div id="lesson-calendar">
+        <%= render "calendar", lessons: lessons  %>
+    </div>
+</div>
