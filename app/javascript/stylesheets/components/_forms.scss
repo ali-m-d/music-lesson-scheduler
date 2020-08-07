@@ -1,12 +1,12 @@
 %focus-style {
-  @apply shadow outline-none border-gray-500;
+  @apply shadow outline-none border-gray-500 bg-white;
 
   box-shadow: 0 0 0 0.2rem theme("colors.gray.200");
   background-clip: padding-box;
 }
 
 .input {
-  @apply appearance-none block w-full text-gray-700 border border-gray-400 rounded px-3 leading-tight bg-white shadow-inner;
+  @apply appearance-none block w-full bg-gray-300 text-gray-800 border border-gray-400 rounded px-3 leading-tight shadow-inner;
   padding-top: .65rem;
   padding-bottom: .65rem;
 }
@@ -21,16 +21,20 @@
 }
 
 .select {
-  @apply appearance-none py-3 px-4 pr-8 block w-full bg-white border border-gray-300 text-gray-700 rounded leading-tight;
+  @apply appearance-none py-3 px-4 pr-8 block w-full bg-gray-300 border border-gray-300 text-gray-800 rounded leading-tight;
   -webkit-appearance: none;
 
 }
 
 .select:focus {
-  @apply outline-none border-gray-400;
+  @apply outline-none border-gray-400 bg-white;
 
-  box-shadow: 0 0 0 0.2rem theme("colors.gray.100");
-  background-clip: padding-box;
+  // box-shadow: 0 0 0 0.2rem theme("colors.gray.100");
+  // background-clip: padding-box;
+}
+
+.select:hover {
+  @apply cursor-pointer;
 }
 
 .caret {

@@ -19,3 +19,5 @@ require("trix")
 import "stylesheets/application"
 import "../css/application.css"
 import "./lessons.js"
+import "./payments.js"
+require("@rails/actiontext")

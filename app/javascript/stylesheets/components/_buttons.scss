@@ -1,5 +1,12 @@
 // Remove what you don't need below to save on file size if you're not using Purge CSS
 
+.link {
+  @apply no-underline text-indigo-400;
+  
+  &:hover, &:focus {
+    @apply text-indigo-800;
+  }
+}
 .btn {
   @apply font-normal text-base rounded cursor-pointer border border-transparent appearance-none inline-block select-none leading-normal antialiased align-baseline;
 

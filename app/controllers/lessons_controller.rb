@@ -5,14 +5,17 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
-    
-    @lessons = current_user.lessons.all
-    
+    if current_user.admin?
+      @lessons = Lesson.all
+    else      
+      @lessons = current_user.lessons.where(user_id: current_user)
+    end
   end
 
   # GET /lessons/1
   # GET /lessons/1.json
   def show
+    @comment = Comment.new
   end
 
   # GET /lessons/new
@@ -29,6 +32,26 @@ class LessonsController < ApplicationController
   def create
     @lesson = Lesson.new(lesson_params)
     @lesson.user_id = current_user.id
+    
+    token = params[:stripeToken]
+    card_brand = params[:user][:card_brand]
+    card_exp_month = params[:user][:card_exp_month]
+    card_exp_year = params[:user][:card_exp_month]
+    card_last4 = params[:user][:card_last4]
+    
+    charge = Stripe::Charge.create(
+      amount: 2500,
+      currency: "gbp",
+      description: "Music Lesson",
+      source: token
+    )
+    
+    current_user.stripe_id = charge.id
+    current_user.card_brand = card_brand
+    current_user.card_exp_month = card_exp_month
+    current_user.card_exp_year = card_exp_year
+    current_user.card_last4 = card_last4
+    current_user.save
 
     respond_to do |format|
       if @lesson.save
@@ -39,6 +62,11 @@ class LessonsController < ApplicationController
         format.json { render json: @lesson.errors, status: :unprocessable_entity }
       end
     end
+    
+    rescue Stripe::CardError => e
+      flash.alert = e.message
+      render action: :new
+    
   end
 
   # PATCH/PUT /lessons/1

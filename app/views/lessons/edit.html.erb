@@ -1,6 +1,5 @@
-<h1>Editing Lesson</h1>
-
-<%= render 'form', lesson: @lesson %>
-
-<%= link_to 'Show', @lesson %> |
-<%= link_to 'Back', lessons_path %>
+<div class="max-w-lg m-auto px-4">
+    <h1 class="text-3xl mt-10">Edit upcoming lesson</h1>
+    <p class="text-lg text-blue-800 mb-6">Edit an upcoming lesson by picking a time that works for you using the form below.</p>
+    <%= render 'form', lesson: @lesson %>
+</div>
