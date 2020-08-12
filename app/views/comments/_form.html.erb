@@ -1,4 +1,4 @@
-<p class="text-sm text-gray-700 my-2">comment as <%= current_user.first_name %> <%= current_user.last_name %></p>
+<p class="text-sm text-gray-700 my-2">Leaving a message as <%= current_user.first_name %> <%= current_user.last_name %></p>
 
 <%= form_for([@lesson, @comment], remote: true) do |f| %>
   <div class="relative">

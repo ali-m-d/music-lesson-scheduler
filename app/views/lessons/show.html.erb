@@ -16,12 +16,12 @@
       </p>
     </div>
 
-    <h4>Comments</h4>
+    <h4>Leave a message for Rebecca</h4>
     <hr class="border" />
 
     <% unless user_signed_in? %>
       <div class="bg-grey-200 rounded p-4 mt-4 text-center">
-        <p class="text-sm text-grey-600"><%= link_to "Login", new_user_session_path, class: "link" %> or <%= link_to "Sign up", new_user_regsitration_path, class: "link" %> to comment.</p>
+        <p class="text-sm text-grey-600"><%= link_to "Login", new_user_session_path, class: "link" %> or <%= link_to "Sign up", new_user_regsitration_path, class: "link" %> to leave a message here.</p>
       </div>
     <% else %>
         <%= render 'comments/form' %>
