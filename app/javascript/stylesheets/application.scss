@@ -9,13 +9,17 @@
 
 @tailwind utilities;
 
+$orange: #b86e14; .orange { color: $orange; }
+
 h1 {
     font-size: 30px;
 }
-
-.scheduler-nav {
-    background-image: linear-gradient(90deg, #d7f1f4 0%, #eeddee 100%);
+p {
+    padding-top: 7px;
+}
+svg {
+    fill: $orange;
 }
 .nav {
-    
+    background-image: linear-gradient(90deg, #d7f1f4 0%, #eeddee 100%);
 }
