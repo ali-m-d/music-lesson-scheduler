@@ -1,14 +1,14 @@
 #nav-tab .active a {
-  @apply bg-indigo-400 text-white;
+  @apply bg-indigo-600 text-white;
 }
 
 .tab {
-   @apply p-5 no-underline inline-block text-indigo-400;
+   @apply p-5 no-underline inline-block text-indigo-600;
    transition: ease 0.2s all;
    margin-bottom: -1px;
 
    &:hover {
-    @apply bg-indigo-700 text-white;
+    @apply bg-indigo-800 text-white;
    }
 
    &:active {

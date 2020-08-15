@@ -57,6 +57,7 @@ class LessonsController < ApplicationController
       if @lesson.save
         format.html { redirect_to @lesson, notice: 'Lesson scheduled!' }
         format.json { render :show, status: :created, location: @lesson }
+        LessonMailer.with(lesson: @lesson, user: current_user).lesson_scheduled.deliver_now
       else
         format.html { render :new }
         format.json { render json: @lesson.errors, status: :unprocessable_entity }
@@ -94,6 +95,12 @@ class LessonsController < ApplicationController
   end
 
   private
+    
+    def must_be_admin
+        unless current_user.admin?      
+            redirect_to lessons_path, alert: "You don't have access to this page" 
+        end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_lesson
       @lesson = Lesson.find(params[:id])

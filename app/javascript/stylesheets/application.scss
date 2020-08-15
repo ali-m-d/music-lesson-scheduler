@@ -17,9 +17,17 @@ h1 {
 p {
     padding-top: 7px;
 }
-svg {
-    fill: $orange;
-}
 .nav {
     background-image: linear-gradient(90deg, #d7f1f4 0%, #eeddee 100%);
+    svg {
+        fill: $orange;
+    }
 }
+.toggler {
+    &:focus {
+        outline-color: $orange;
+    }
+}
+#lesson_start_time_4i, #lesson_start_time_5i, #lesson_end_time_4i, #lesson_end_time_5i  { 
+    margin-left: .5rem;
+  }

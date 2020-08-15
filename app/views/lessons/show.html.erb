@@ -1,7 +1,7 @@
-<div class="max-w-lg my-10 m-auto">
-  <div class="p-10 bg-white border border-gray-400 rounded">
+<div class="max-w-lg my-6 m-auto">
+  <div class="px-10 py-6 bg-white border border-gray-400 rounded">
 
-    <div class="flex flex-wrap justify-between items-center mb-5">
+    <div class="flex flex-wrap justify-between items-center mb-2">
       <h1><%= @lesson.name %></h1>
       <%= link_to "Cancel Lesson", lesson_path(@lesson), method: :delete, data: { confirm: "Are you sure you want to cancel? "}, class: "btn btn-red" %>
     </div>
@@ -31,4 +31,5 @@
       <%= render @lesson.comments %>
     </div>
   </div>
+  <%= @mail %>
 </div>

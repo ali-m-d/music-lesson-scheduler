@@ -1,7 +1,11 @@
-// Remove what you don't need below to save on file size if you're not using Purge CSS
-
+nav a {
+  &:hover, &:active {
+    @apply underline orange;
+    
+  }
+}
 .link {
-  @apply no-underline text-indigo-400;
+  @apply no-underline text-indigo-600;
   
   &:hover, &:focus {
     @apply text-indigo-800;

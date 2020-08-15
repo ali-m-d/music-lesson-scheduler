@@ -1,0 +1,19 @@
+<div class="max-w-lg mt-8 m-auto">
+  <div class="px-10 py-6 bg-white border border-gray-400 rounded">
+
+    <p class="text-lg font-semibold text-indigo-600">Send a message to Rebecca</h4>
+    <hr class="border mb-2" />
+
+    <%= form_for :message, url: new_message_path, method: "post", remote: true do |f| %>
+      <div class="relative">
+        <%= f.label :email, "Email", class: "label mb-1" %>
+        <%= f.email_field :email, class: "input mb-3", placeholder: "Your email address" %>
+        <%= f.hidden_field :content, class: "input h-32 border border-gray-300 resize-none", placeholder: "Enter a message here" %>
+    
+        <trix-editor input="message_content" id="message_content_trix" class="h-32 p-4"></trix-editor>
+    
+        <%= f.submit "Send", class: "btn btn-small btn-teal block w-full text-center mt-2 lg: mt-0 lg:text-left lg:mb-2 lg:mr-2 lg:w-auto lg:inline-flex" %>
+      </div>
+    <% end %>
+  </div>
+</div>

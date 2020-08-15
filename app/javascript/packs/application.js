@@ -21,3 +21,18 @@ import "../css/application.css"
 import "./lessons.js"
 import "./payments.js"
 require("@rails/actiontext")
+
+document.addEventListener('turbolinks:load', (event) => {
+    const collapse = document.getElementById('collapse');
+    const toggler = document.getElementById('toggler');
+
+    toggler.addEventListener('click', () => {
+        console.log("toggler clicked");
+        toggleCollapse();
+    });
+
+    const toggleCollapse = () => {
+        console.log("inside toggleCollapse")
+        collapse.classList.toggle('hidden');
+    };
+})

@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     end
     
     def create
-       @comment = @lesson.comments.create(reply: params[:comment][:reply], user_id: current_user.id) 
+        @comment = @lesson.comments.create(reply: params[:comment][:reply], user_id: current_user.id) 
        
         respond_to do |format|
             if @comment.save

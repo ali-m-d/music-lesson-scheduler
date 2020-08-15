@@ -21,5 +21,13 @@ class HomeController < ApplicationController
       format.js
     end
   end
+  
+  def contact
+    @destination = 'contact'
+    respond_to do |format|
+      format.html { redirect_to root_path(destination: 'contact') }
+      format.js
+    end
+  end
 
 end
