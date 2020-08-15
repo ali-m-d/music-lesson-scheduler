@@ -18,4 +18,12 @@ module ApplicationHelper
     def admin?
         user_signed_in? && current_user.admin? 
     end
+    
+    def remote?
+       if controller_name != 'lessons' && controller_name != 'users'
+           return false
+       else
+           return true
+       end
+    end
 end

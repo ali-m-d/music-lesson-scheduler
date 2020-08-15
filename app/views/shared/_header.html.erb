@@ -1,9 +1,9 @@
 <header class="bg-white">
   <nav class="flex flex-col items-stretch md:flex-row md:items-center justify-between px-5 md:px-10 lg:px-20 bg-blue-200 border-b nav sticky top-0">
     <div class="flex flex-row flex-1 justify-between md:justify-start items-center">
-      <%= link_to root_path do %>
+      <%= link_to root_path, class: "hover:no-underline" do %>
         <div class="flex flex-row items-stretch md:items-center flex-no-shrink">
-          <%= image_tag "sax-sketch-small.png", size: "45x45", class: "inline my-2 mr-3" %>
+          <%= image_tag "sax-sketch-small.png", width: "45", class: "inline my-2 mr-3" %>
           <div class="flex flex-col justify-evenly md:py-0 md:justify-center">
             <div class="tracking-tight font-semibold text-3xl leading-none md:leading-tight orange heading">Rebecca Railton</div>
             <div class="tracking-tighter font-normal text-2xl leading-none md:leading-tight orange subheading">Woodwind & Piano Teacher</div>
@@ -17,7 +17,7 @@
       </div>
     </div>
     <div id="collapse" class="flex flex-col md:grid md:grid-cols-5 flex-1 mt-2 lg:mt-0 text-center hidden">
-      <%= link_to landing_path, remote: (controller_name != 'lessons') do %>
+      <%= link_to landing_path, remote: remote? do %>
         <div class="flex flex-row justify-center md:justify-start md:flex-col items-center mb-2 md:my-0 text-gray-700">
           <%= render 'icons/home' %>
           <div class="md:pt-1 ml-2 md:ml-0 text-xs tracking-tight font-medium orange uppercase">Home</div>
@@ -29,19 +29,19 @@
           <div class="md:pt-1 ml-2 md:ml-0 text-xs tracking-tight font-medium orange uppercase">Schedule Lesson</div>
         </div>
       <% end %>
-      <%= link_to about_path, remote: (controller_name != 'lessons') do %>
+      <%= link_to about_path, remote: remote? do %>
         <div class="flex flex-row justify-center md:justify-start md:flex-col items-center my-2 md:my-0 text-gray-700 ml-auto">
           <%= render 'icons/info' %>
           <div class="md:pt-1 ml-2 md:ml-0 text-xs tracking-tight font-medium orange uppercase">About Me</div>
         </div>
       <% end %>
-      <%= link_to contact_path, remote: (controller_name != 'lessons') do %>
+      <%= link_to contact_path, remote: remote? do %>
         <div class="flex flex-row justify-center md:justify-start md:flex-col items-center my-2 md:my-0 text-gray-700 ml-auto">
           <%= render 'icons/contacts' %>
           <div class="md:pt-1 ml-2 md:ml-0 text-xs tracking-tight font-medium orange uppercase">Message Me</div>
         </div>
       <% end %>
-      <%= link_to "tel:447789005589", remote: (controller_name != 'lessons') do %>
+      <%= link_to "tel:447789005589", remote: remote? do %>
         <div class="flex flex-row justify-center md:justify-start md:flex-col items-center my-2 md:my-0 text-gray-700 ml-auto">
           <%= render 'icons/smartphone' %>
           <div class="md:pt-1 ml-2 md:ml-0 text-xs tracking-tight font-medium orange uppercase">Call Me</div>
@@ -54,16 +54,18 @@
 <% if !current_page?(root_path) %>
   <header class="bg-white">
     <nav class="flex flex-col items-start md:flex-row md:items-center px-5 md:px-10 lg:px-20 text-gray-800 border-b bg-teal-100 scheduler-nav">
-      <div class="flex items-center mr-6 flex-no-shrink">
-        <%= link_to root_path, class: "text-xl md:text-2xl tracking-tight font-semibold" do %>
-          <%= image_tag "conductor.svg", size: "45x45", class: "inline my-2 mr-2" %>
-          MusicLessonScheduler
-        <% end %>
+    
+      <div class="flex flex-row items-center mr-6 flex-no-shrink">
+       
+       
+        <div><%= image_tag "conductor.svg", size: "45x45", class: "my-2 mr-2" %></div>
+          <div class="text-xl md:text-2xl tracking-tight font-semibold">MusicLessonScheduler</div>
       </div>
-      <div class="flex flex-col self-stretch md:self-auto md:flex-row flex-1 lg:justify-center">
+      
+      <div class="flex flex-col justify-start md:justify-end self-stretch md:self-auto md:flex-row  flex-1 lg:justify-center">
         <% unless user_signed_in? %>
           <%= link_to "Login", new_user_session_path, class: "btn btn-default md:mr-2 text-center" %>
-          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-default md:mr-2 text-center" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-default md:mr-2 mb-4 md:mb-0 text-center" %>
         <% else %>
           <%= link_to "Dashboard", lessons_path, class: "btn btn-default md:mr-2 text-center" %>
           <%= link_to "Schedule Lesson", new_lesson_path, class: "btn btn-default text-center md:mr-2" %>
