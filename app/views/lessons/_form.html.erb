@@ -19,7 +19,7 @@
     <div class="mb-6">
       <label class="label" for="lesson_start_time">Start time</label>
       <div class="flex items-center justify-start my-2 max-w-md">
-        <select id="lesson_start_time_1i" name="lesson[start_time(1i)]" class="select py-2 px-2 mr-2">
+        <select id="lesson_start_time_1i" name="lesson[start_time(1i)]" class="select py-2 px-2 mr-2 w-20">
           <option value="2020" selected="selected">2020</option>
           <option value="2021">2021</option>
           <option value="2022">2022</option>
@@ -27,7 +27,7 @@
           <option value="2024">2024</option>
           <option value="2025">2025</option>
         </select>
-        <select id="lesson_start_time_2i" name="lesson[start_time(2i)]" class="select py-2 px-2 mr-2">
+        <select id="lesson_start_time_2i" name="lesson[start_time(2i)]" class="select py-2 px-2 mr-2 w-20">
           <option value="1">January</option>
           <option value="2">February</option>
           <option value="3">March</option>
@@ -41,7 +41,7 @@
           <option value="11">November</option>
           <option value="12">December</option>
         </select>
-        <select id="lesson_start_time_3i" name="lesson[start_time(3i)]" class="select py-2 px-2 mr-2">
+        <select id="lesson_start_time_3i" name="lesson[start_time(3i)]" class="select py-2 px-2 mr-2 w-20">
           <option value="1"selected="selected">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -76,7 +76,7 @@
         </select>
       </div>
     <div class="flex items-center justify-start my-2 max-w-md w-auto">
-      <select id="lesson_start_time_4i" name="lesson[start_time(4i)]" class="select py-2 px-2 ml-0 mr-2">
+      <select id="lesson_start_time_4i" name="lesson[start_time(4i)]" class="select py-2 px-2 ml-0 mr-2 w-20">
         <option value="00" selected="selected">00</option>
         <option value="01">01</option>
         <option value="02">02</option>
@@ -103,7 +103,7 @@
         <option value="23">23</option>
       </select>
       : 
-      <select id="lesson_start_time_5i" name="lesson[start_time(5i)]" class="select py-2 px-2 ml-2">
+      <select id="lesson_start_time_5i" name="lesson[start_time(5i)]" class="select py-2 px-2 ml-2 w-20">
         <option value="00">00</option>
         <option value="05">05</option>
         <option value="10">10</option>
@@ -131,7 +131,7 @@
     
     <%= render 'payment_form' %>
     
-    <%= form.submit class: "btn btn-indigo text-base py-2 px-5" %>
+    <%= form.submit class: "btn btn-indigo text-base py-2 px-5 mb-5" %>
 
   <% end %>
 </div>
