@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   const public_key = document.querySelector("meta[name='stripe-public-key']").content;
-  Stripe.api_key = '<%= ENV['stripe_api_key'] %>'
+  Stripe.api_key = ENV['stripe_api_key']
   const stripe = Stripe(public_key);
   const elements = stripe.elements();
 
