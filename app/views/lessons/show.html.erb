@@ -5,8 +5,11 @@
       <h1><%= @lesson.name %></h1>
       <%= link_to "Cancel Lesson", lesson_path(@lesson), method: :delete, data: { confirm: "Are you sure you want to cancel? "}, class: "btn btn-red" %>
     </div>
-
-    <div class="border p-6 bg-gray-400 mb-5 flex items-center justify-between">
+  
+    <div class="py-2 bg-gray-400 flex items-center justify-center">
+      <p class="text-indigo-600 text-sm">Date: <span class="font-bold"><%= readable_day(@lesson.start_time) %></span></p>
+    </div>
+    <div class="px-6 pb-6 bg-gray-400 mb-5 flex items-center justify-between">
       <p class="border-2 py-3 px-4 border-indigo-500 rounded-full text-sm text-indigo-600">
         Start time: <span class="font-bold"><%= readable_time(@lesson.start_time) %></span>
       </p>

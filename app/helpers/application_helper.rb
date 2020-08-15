@@ -3,6 +3,10 @@ module ApplicationHelper
        time.strftime("%b %d, %I:%M%P") 
     end
     
+    def readable_day(time)
+       time.strftime("%b %d") 
+    end
+    
     def readable_time(time)
        time.strftime("%I:%M%P") 
     end

@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", () => {
+document.addEventListener("DOMContentLoaded", () => {
     const tabElements = document.querySelectorAll('#nav-tab .tab');
     
     function onTabClick(event) {

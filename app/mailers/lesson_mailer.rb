@@ -6,7 +6,7 @@ class LessonMailer < ApplicationMailer
     def lesson_scheduled
        @lesson = params[:lesson]
        @user = params[:user]
-       attachments.inline["piano.svg"] = File.read("#{Rails.root}/app/assets/images/piano.svg")
+       # attachments.inline["piano.svg"] = File.read("#{Rails.root}/app/assets/images/piano.svg")
        mail(to: @user.email, subject: "Lesson Booking Confirmation")
     end
 end

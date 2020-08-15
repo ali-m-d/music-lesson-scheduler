@@ -21,7 +21,8 @@
 }
 
 .select {
-  @apply appearance-none py-3 px-4 pr-8 block w-full bg-gray-300 border border-gray-300 text-gray-800 rounded leading-tight;
+  @apply appearance-none py-3 px-4 pr-8 block bg-gray-300 border border-gray-300 text-gray-800 rounded leading-tight;
+  // @apply w-full;
   -webkit-appearance: none;
 }
 

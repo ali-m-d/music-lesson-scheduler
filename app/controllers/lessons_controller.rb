@@ -30,8 +30,14 @@ class LessonsController < ApplicationController
   # POST /lessons
   # POST /lessons.json
   def create
-    @lesson = Lesson.new(lesson_params)
-    @lesson.user_id = current_user.id
+    @lesson = Lesson.new(user_id: current_user.id)
+    @lesson.update("start_time(1i)": params["lesson"]["start_time(1i)"], "start_time(2i)": params["lesson"]["start_time(2i)"], "start_time(3i)": params["lesson"]["start_time(3i)"], "start_time(4i)": params["lesson"]["start_time(4i)"], "start_time(5i)": params["lesson"]["start_time(5i)"])
+    @lesson.update("duration": params["lesson"]["duration"])
+    
+    start_time = Time.new(params["lesson"]["start_time(1i)"], params["lesson"]["start_time(2i)"], params["lesson"]["start_time(3i)"], params["lesson"]["start_time(4i)"], params["lesson"]["start_time(5i)"])
+    end_time = start_time + params["lesson"]["duration"].to_i * 60
+  
+    @lesson.update("end_time(1i)": end_time.year.to_s, "end_time(2i)": end_time.month.to_s, "end_time(3i)": end_time.day.to_s, "end_time(4i)": end_time.hour.to_s, "end_time(5i)": end_time.min.to_s)
     
     token = params[:stripeToken]
     card_brand = params[:user][:card_brand]
@@ -108,6 +114,6 @@ class LessonsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def lesson_params
-      params.require(:lesson).permit(:name, :start_time, :end_time, :user_id)
+      params.require(:lesson).permit(:name, :start_time, :duration, :end_time, :user_id)
     end
 end
