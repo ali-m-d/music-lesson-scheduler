@@ -5,7 +5,7 @@ Rails.application.configure do
   config.cache_classes = true
   
   config.action_mailer.delivery_method = :smtp
-  host = "https://eu-west-2.console.aws.amazon.com/cloud9/ide/6d199b1424e34b75afc7e772f48a1b9c"
+  config.action_cable.default_url_options = { :host => "https://rebecca-railton.herokuapp.com" }
   config.action_mailer.smtp_settings = {
     :address => "smtp.gmail.com",
     :port => 587,
@@ -14,7 +14,7 @@ Rails.application.configure do
     :authentication => "plain",
     :enable_starttls_auto => true
   }
-
+  config.action_mailer.raise_delivery_errors = false
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
