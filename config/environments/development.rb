@@ -3,13 +3,15 @@ Rails.application.configure do
   
   config.action_mailer.delivery_method = :smtp
   host = "https://eu-west-2.console.aws.amazon.com/cloud9/ide/6d199b1424e34b75afc7e772f48a1b9c"
+  
   config.action_mailer.smtp_settings = {
-    :address => "smtp.gmail.com",
-    :port => 587,
-    :user_name => "alistair.divorty@gmail.com",
-    :password => "qtxx svwq lpdr xnuu",
-    :authentication => "plain",
-    :enable_starttls_auto => true
+    port: 587,
+    address: 'smtp.sendgrid.net',
+    domain: "https://eu-west-2.console.aws.amazon.com/cloud9/ide/6d199b1424e34b75afc7e772f48a1b9c",
+    user_name: 'apikey',
+    password: ENV['sendgrid_password'],
+    authentication: :plain,
+    enable_starttls_auto: true
   }
   
   # Don't care if the mailer can't send.

@@ -1,5 +1,5 @@
 <header class="bg-white">
-  <nav class="flex flex-col items-stretch md:flex-row md:items-center justify-between px-5 md:px-10 lg:px-20 bg-blue-200 border-b nav sticky top-0">
+  <nav class="flex flex-col items-stretch md:flex-row md:items-center justify-between px-5 md:px-10 lg:px-20 bg-blue-200 nav sticky top-0">
     <div class="flex flex-row flex-1 justify-between md:justify-start items-center">
       <%= link_to root_path, class: "hover:no-underline" do %>
         <div class="flex flex-row items-stretch md:items-center flex-no-shrink">
@@ -53,7 +53,7 @@
 
 <% if !current_page?(root_path) %>
   <header class="bg-white">
-    <nav class="flex flex-col items-start md:flex-row md:items-center px-5 md:px-10 lg:px-20 text-gray-800 border-b bg-teal-100 scheduler-nav">
+    <nav class="flex flex-col items-start md:flex-row md:items-center px-5 md:px-10 lg:px-20 text-gray-800 bg-teal-100 scheduler-nav">
     
       <div class="flex flex-row items-center mr-6 flex-no-shrink">
        
@@ -64,12 +64,12 @@
       
       <div class="flex flex-col justify-start md:justify-end self-stretch md:self-auto md:flex-row  flex-1 lg:justify-center">
         <% unless user_signed_in? %>
-          <%= link_to "Login", new_user_session_path, class: "btn btn-default md:mr-2 text-center" %>
+          <%= link_to "Login", new_user_session_path, class: "btn btn-default mb-1 md:mb-0 md:mr-2 text-center" %>
           <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-default md:mr-2 mb-4 md:mb-0 text-center" %>
         <% else %>
-          <%= link_to "Dashboard", lessons_path, class: "btn btn-default md:mr-2 text-center" %>
-          <%= link_to "Schedule Lesson", new_lesson_path, class: "btn btn-default text-center md:mr-2" %>
-          <%= link_to "Users", users_path, class: "btn btn-default text-center md:mr-2" if admin? %>
+          <%= link_to "Dashboard", lessons_path, class: "btn btn-default mb-1 md:mb-0 md:mr-2 text-center" %>
+          <%= link_to "Schedule Lesson", new_lesson_path, class: "btn btn-default text-center mb-1 md:mb-0 md:mr-2" %>
+          <%= link_to "Users", users_path, class: "btn btn-default text-center mb-1 md:mb-0 md:mr-2" if admin? %>
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-default text-center md:mr-2 mb-4 md:mb-0" %>
         <% end %>
       </div>

@@ -120,9 +120,9 @@
     </div>
       </div>
       <div class="mb-3">
-      <%= form.label :duration, class: "label" %>
+      <%= form.label :duration, "Duration (mins)", class: "label" %>
       <div class="flex items-center justify-between max-w-md">
-        <%= form.number_field :duration, in: 10..60, step: 10, value: 30, class: "select py-2 px-2 mr-2 w-20" %>
+        <%= form.number_field :duration, in: 10..60, step: 5, value: 30, class: "select py-2 px-2 mr-2 w-20" %>
       </div>
     </div>
     </div>
@@ -131,7 +131,7 @@
     
     <%= render 'payment_form' %>
     
-    <%= form.submit class: "btn btn-indigo text-base py-2 px-5 mb-5" %>
+    <%= form.submit "Pay Now", class: "btn btn-indigo text-base py-2 px-5 mb-5" %>
 
   <% end %>
 </div>

@@ -1,7 +1,7 @@
 class LessonMailer < ApplicationMailer
     helper :application
     
-    default from: "noreply@rebeccarailton.com"
+    default from: "alistair.divorty@gmail.com"
     
     def lesson_scheduled
        @lesson = params[:lesson]
