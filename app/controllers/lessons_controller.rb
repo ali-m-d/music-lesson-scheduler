@@ -40,7 +40,6 @@ class LessonsController < ApplicationController
     @lesson.update("end_time(1i)": end_time.year.to_s, "end_time(2i)": end_time.month.to_s, "end_time(3i)": end_time.day.to_s, "end_time(4i)": end_time.hour.to_s, "end_time(5i)": end_time.min.to_s)
     
     charge_pence = @lesson.duration * 41
-    @charge_pounds = charge_pence / 100.0
     
     token = params[:stripeToken]
     card_brand = params[:user][:card_brand]
