@@ -66,7 +66,7 @@ class LessonsController < ApplicationController
       if @lesson.save
         format.html { redirect_to @lesson, notice: 'Lesson scheduled!' }
         format.json { render :show, status: :created, location: @lesson }
-        LessonMailer.with(lesson: @lesson, user: current_user).lesson_scheduled.deliver_now
+        LessonMailer.with(lesson: @lesson, user: current_user, charge: @charge_pounds).lesson_scheduled.deliver_now
       else
         format.html { render :new }
         format.json { render json: @lesson.errors, status: :unprocessable_entity }
