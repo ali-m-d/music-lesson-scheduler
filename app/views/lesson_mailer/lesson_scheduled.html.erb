@@ -23,7 +23,7 @@
                     <%#= image_tag attachments["piano.svg"].url, width: "50%" %>
                     <h1 style="font-size: 22px; ">Thank you, <%= @user.name %></h1>
                     <p style="font-size: 18px; line-height: 24px;">You have successfully scheduled a lesson.</p>
-                    <p style="font-size: 18px; line-height: 24px;">Your card was charged £@charge_pounds. %> </p>
+                    <p style="font-size: 18px; line-height: 24px;">Your card was charged £<%= @charge_pounds %>.</p>
                   </td>
                 </tr>
               </table>
