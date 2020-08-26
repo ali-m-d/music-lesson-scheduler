@@ -44,14 +44,15 @@ nav a {
 
 .btn-default {
   @apply bg-white border border-gray-400 text-gray-700;
-  box-shadow: 1px 1px 2px rgba(#444444, 0.7);
+  // box-shadow: 1px 1px 2px rgba(#444444, 0.7);
 
   &:hover {
     @apply bg-gray-200 text-indigo-700;
   }
   &:focus {
     @apply bg-gray-200 text-indigo-700;
-    box-shadow: none;
+    @apply border-solid border-2 border-indigo-700;
+    outline: none;
   }
 }
 

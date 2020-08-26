@@ -28,6 +28,6 @@ p {
         outline-color: $orange;
     }
 }
-.nav-link:active, .nav-link:focus {
-    background-color: none;
+body {
+    -webkit-tap-highlight-color: #d7f1f4;
 }
