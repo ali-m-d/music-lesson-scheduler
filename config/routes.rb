@@ -11,9 +11,12 @@ Rails.application.routes.draw do
 
 
   devise_for :users
-  root to: 'home#index'
+  root to: 'home#landing'
+  
+  
   resources :users, only: [:index]
   
+  get 'home/index', to: 'home#index', as: 'home'
   get '/home/about', to: 'home#about', as: 'about'
   get '/home/landing', to: 'home#landing', as: 'landing'
   get '/home/contact', to: 'home#contact', as: 'contact'
