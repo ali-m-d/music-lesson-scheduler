@@ -28,4 +28,6 @@ p {
         outline-color: $orange;
     }
 }
-
+.nav-link:active, .nav-link:focus {
+    background-color: none;
+}

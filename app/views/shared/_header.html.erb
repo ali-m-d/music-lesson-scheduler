@@ -17,31 +17,31 @@
       </div>
     </div>
     <div id="collapse" class="flex flex-col md:grid md:grid-cols-5 flex-1 mt-2 lg:mt-0 text-center hidden">
-      <%= link_to landing_path, remote: remote? do %>
+      <%= link_to landing_path, remote: remote?, class: "nav-link" do %>
         <div class="flex flex-row justify-center md:justify-start md:flex-col items-center mb-2 md:my-0 text-gray-700">
           <%= render 'icons/home' %>
           <div class="md:pt-1 ml-2 md:ml-0 text-xs tracking-tight font-medium orange uppercase">Home</div>
         </div>
       <% end %>
-      <%= link_to lessons_path do %>
+      <%= link_to lessons_path, class: "nav-link" do %>
         <div class="flex flex-row justify-center md:justify-start md:flex-col items-center my-2 md:my-0 text-gray-700 ml-auto">
           <%= render 'icons/conductor' %>
           <div class="md:pt-1 ml-2 md:ml-0 text-xs tracking-tight font-medium orange uppercase">Schedule Lesson</div>
         </div>
       <% end %>
-      <%= link_to about_path, remote: remote? do %>
+      <%= link_to about_path, remote: remote?, class: "nav-link" do %>
         <div class="flex flex-row justify-center md:justify-start md:flex-col items-center my-2 md:my-0 text-gray-700 ml-auto">
           <%= render 'icons/info' %>
           <div class="md:pt-1 ml-2 md:ml-0 text-xs tracking-tight font-medium orange uppercase">About Me</div>
         </div>
       <% end %>
-      <%= link_to contact_path, remote: remote? do %>
+      <%= link_to contact_path, remote: remote?, class: "nav-link" do %>
         <div class="flex flex-row justify-center md:justify-start md:flex-col items-center my-2 md:my-0 text-gray-700 ml-auto">
           <%= render 'icons/contacts' %>
           <div class="md:pt-1 ml-2 md:ml-0 text-xs tracking-tight font-medium orange uppercase">Message Me</div>
         </div>
       <% end %>
-      <%= link_to "tel:447789005589" do %>
+      <%= link_to "tel:447789005589", class: "nav-link" do %>
         <div class="flex flex-row justify-center md:justify-start md:flex-col items-center my-2 md:my-0 text-gray-700 ml-auto">
           <%= render 'icons/smartphone' %>
           <div class="md:pt-1 ml-2 md:ml-0 text-xs tracking-tight font-medium orange uppercase">Call Me</div>

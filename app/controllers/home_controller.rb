@@ -9,7 +9,7 @@ class HomeController < ApplicationController
   def landing
     @destination = 'landing'
     respond_to do |format|
-      format.html { redirect_to root_path(destination: 'landing') }
+      format.html { redirect_to root_path }
       format.js
     end
   end
@@ -17,7 +17,7 @@ class HomeController < ApplicationController
   def about
     @destination = 'about'
     respond_to do |format|
-      format.html { redirect_to root_path(destination: 'about') }
+      format.html { redirect_to root_path }
       format.js
     end
   end
@@ -25,7 +25,7 @@ class HomeController < ApplicationController
   def contact
     @destination = 'contact'
     respond_to do |format|
-      format.html { redirect_to root_path(destination: 'contact') }
+      format.html { redirect_to root_path}
       format.js
     end
   end

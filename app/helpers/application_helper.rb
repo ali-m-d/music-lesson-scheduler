@@ -20,7 +20,7 @@ module ApplicationHelper
     end
     
     def remote?
-       if controller_name == 'lessons' || controller_name == 'users'
+       if controller_name == 'lessons' || controller_name == 'users' || controller_name == 'sessions'
            return false
        else
            return true
