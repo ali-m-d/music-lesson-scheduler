@@ -5,7 +5,6 @@
   <body class="font-sans font-normal leading-normal text-gray-800 bg-white">
     <%= render "shared/flash_notice" %>
     <%= render "shared/header" %>
-    <div><%= controller_name %></div>
 
     <main class="px-5 md:px-10 lg:px-20 main">
       <%= content_for?(:content) ? yield(:content) : yield %>
